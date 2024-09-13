@@ -1,0 +1,11 @@
+def IsPrime(): # Creates a function to use it for later.
+    ChosenNo = int(input("Choose your number: ")) # This allows the user to input the number and it only allows intergers and not string because of int()
+    Ans = str(ChosenNo / 2) # It divdes the number by 2 to make it into a float or a integer.
+    print(Ans) # For debugging purposes
+    if '.5' in Ans: # It checks the string if it holds the data
+        print('Prime') # Prints prime if it has a .5
+    else: # Or else
+        print('Not Prime') # it will print not prime if it has a .0
+        
+IsPrime() # Using the function
+ 
