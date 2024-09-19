@@ -1,0 +1,67 @@
+import random
+
+lives = 1
+score = 0
+goalscore = 1
+xplayer, yplayer = 0, 0
+bombpos = random.randint(-4, 4), random.randint(-4, 4)
+scorepos = random.randint(-4, 4), random.randint(-4, 4)
+
+def status():
+    print(f"lives ;{lives}")    
+    print(f"score ;{score}")
+    print(f"player position : {xplayer, yplayer}")
+    print(f"Bomb Position: {bombpos}")
+    print(f"Score Position: {scorepos}")
+    
+def movementy():
+    global xplayer, yplayer
+    if 'up' in movement1:
+        yplayer += 1
+    elif 'down' in movement1:
+        yplayer -= 1
+    else: 
+        print('ok')
+    
+def movementx():
+    global xplayer, yplayer
+    if 'right' in movement1:
+        xplayer += 1
+    elif 'left' in movement1:
+        xplayer -= 1
+    else: 
+        print('nooo')
+
+
+def damage():
+    global lives
+    lives -= 1
+
+def test():
+    if bombpos == (xplayer, yplayer):
+        damage()
+    else:
+        print()
+        
+    if scorepos == (xplayer, yplayer):
+        win()
+    else:
+        print()
+
+
+def win():
+    global score
+    score += 1
+
+while lives != 0 or score != goalscore:
+    
+    movement1 = input('Would you like to go up, down, left or right? ')
+    movementx()
+    movementy()
+    test()
+    status()
+    
+
+ 
+    
+        
