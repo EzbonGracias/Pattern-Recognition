@@ -1,0 +1,36 @@
+from math import pi
+
+first1 = input(("Choose a shape: ")) # Input from the user
+first2 = first1.lower() # Makes the input all lowercase
+
+def rectangle(): # function to be recalled later
+
+    length = float(input('Choose the value for your length: ')) # inputting the value for the length
+    width = float(input('Choose the value for your width: ')) # inputting the width of the rectangle
+
+    area = length * width # calculation for the area
+    print(area) # printing the final result
+
+def circle(): # function to be recalled later
+
+    radius = float(input('Choose your circle radius: ')) # a variable for the input 
+    radius2 = radius * radius # radius squared
+
+    print(pi * radius2)  # printing the final result
+    
+def triangle(): # function to be recalled later
+
+    height = float(input('Choose the value for your length: ')) # the user input the height
+    base = float(input('Choose the value for your width: ')) # the user input the base
+
+    area2 = height * base / 2 # calculation for area of triangle 
+    print(area2)  # printing the final result
+
+if 'rectangle' in first2: # if statment to check if rectangle is located in variable
+    rectangle() # recalling the function
+    
+if 'circle' in first2: # if statment to check if circle is located in variable 
+    circle() # recalling the function
+    
+if 'triangle' in first2: # if statment to check if triangle is located in variable 
+    triangle() # recalling the function
