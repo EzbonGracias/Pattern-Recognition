@@ -1,0 +1,25 @@
+using System; // Fetching the console.writeline and readline from the library
+
+class RectangularAreaCalcultor
+{
+    static void Main(string[] args) // Where the code starts (main), void means return everything
+    {
+        double length; // variable for the length of the rectangle
+        double width; // varible for the width of the rectangle
+
+        Console.WriteLine("Choose your length for your rectangle"); // input the length by the user
+        length = Convert.ToDouble(Console.ReadLine()); // converts it into a more accurate float and assigns it to a variable
+
+        Console.WriteLine("Choose your width for your rectangle"); // input the width by the user
+        width = Convert.ToDouble(Console.ReadLine()); // converts it into a more accurate float and assigns it to a variable
+
+        double area = CalculateArea(length, width); // assigns a variable to the function
+
+        Console.WriteLine($"The area of your rectangle is {area}"); // prints the data of the area
+
+    }
+    static double CalculateArea(double length, double width) // creates a function for the calculation
+    {
+        return length * width; // length times width
+    }
+}
