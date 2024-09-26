@@ -1,0 +1,29 @@
+def quicksort(array, left, right):
+    if left < right:
+        partitionpos = partition(array, left, right)
+        quicksort(array, left, partitionpos - 1)
+        quicksort(array, partitionpos + 1, right)
+
+def partition(array, left, right):
+    i = left
+    j = right - 1
+    pivot = array[right]
+
+    while i < j:
+        while i < right and array[i] < pivot:
+            i += 1
+        while j > left and array[j] >= pivot:
+            j -= 1
+
+        if i < j:
+            array[i], array[j] = array[j], array[i]
+
+    if array[i] > pivot:
+        array[i], array[right] = array[right], array[i]
+
+    return i
+
+arra = input('Choose: ')
+array = arra.split()
+quicksort(array, 0, len(array) - 1)
+print(array)
