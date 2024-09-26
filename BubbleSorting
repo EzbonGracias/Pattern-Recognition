@@ -1,0 +1,21 @@
+def sorting(array): # Creates a function that can be called with array
+    m = len(array) # has a function that adds the numbers in an object
+    for i in range(m): # for loop that stops until it reaches m (the array)
+        for j in range(0, m-i-1): # another for loop that stops until the j equals m-i-1
+            if array[j] > array[j + 1]: # checks if the j is bigger than j + 1
+                array[j], array[j+1] = array[j+1], array[j] # changes the value of j and j+1 by swapping them
+                return array # returns the value back to array
+            
+def userin(): # a function for the user's input
+    userinput = input('Enter The Numbers: ') # asks for the user's input
+    array = list(map(int, userinput.split())) # creates an array with a list of the user input and splits the string into a list
+    return array # returns the value back to the array var
+
+def main(): # another function for the output
+    array = userin() # makes the array data equal the user input function
+    newarray = sorting(array) # makes the array sorted
+    print('The Numbers Have Been Sorted, The Results Are Here: ', newarray) #outputs the answer
+    
+if __name__ == '__main__': # checks if the name is 'main'
+    main() # recalls the main output function
+
